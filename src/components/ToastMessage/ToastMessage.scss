@@ -1,0 +1,37 @@
+// @import '../../theme/variables.scss', '../../theme/mixins.scss';
+
+.toast {
+  // @include popupShadow;
+  filter: drop-shadow(0px 0px 10px rgba(144, 159, 191, 0.3));
+  background-color:transparent;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  right: 1rem;
+  padding: 1rem 2rem;
+  position: fixed;
+  bottom: 1rem;
+  width: max-content;
+  min-width: 200px;
+  z-index: 1
+  ;
+  height: 30px;
+
+  &.success {
+    background-color: greenyellow;
+  }
+  &.error {
+    background-color: rgb(245, 106, 106);
+  }
+  &.info {
+    background-color: rgb(52, 134, 197);
+  }
+  &.warning {
+    background-color: rgb(188, 201, 13);
+  }
+}

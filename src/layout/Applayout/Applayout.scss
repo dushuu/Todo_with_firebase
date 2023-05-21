@@ -1,0 +1,63 @@
+.container{
+
+    background-image:
+     linear-gradient(113.81deg, #FFFFFF -2.92%, #77cad0 -2.92%, rgba(142, 55, 144, 0) 101.08%);
+     width: 100vw;
+     height: 100vh;
+     position: fixed;
+    
+    
+     
+
+
+     .heading-container{
+        width: 100%;
+        height: 100px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    .heading{
+        font-size: 60px;
+        font-weight: 400;
+    }
+.section-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    // margin-top: 100px;
+    height: 1080px;
+}
+.layout-img-container{
+    width: 50%;
+    /* border: 2px solid black; */
+    background-size: contain;
+    height:100%;
+    background-repeat: no-repeat;   
+    background-position: 96%;
+   
+    // background-color: aqua;
+
+}
+.for-login{
+    background-image: url('/src/components/background.svg');
+    width: 50%;
+    /* border: 2px solid black; */
+    background-size: contain;
+    height:100%;
+    background-repeat: no-repeat;   
+    background-position: 96%;
+
+}
+.for-signup{
+    background-image: url('/src/components/sign-up.png');
+    width: 50%;
+    /* border: 2px solid black; */
+    background-size: contain;
+    height:100%;
+    background-repeat: no-repeat;   
+    background-position: 96%;
+}
+
+}

@@ -1,0 +1,72 @@
+.login-container{
+    margin: 200px auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+      .heading{
+          h3{
+              font-weight: 300;
+          }
+      }
+      
+      .input-container{
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-top:30px;
+          justify-content: center;
+          align-items: center;
+      }
+      
+      .input{
+      
+      padding: 7px;
+      margin-top: 20px;
+      width: 400px;
+      
+      border-radius: 6px;
+      font-size: 16px;
+      background: #fbfbfb;
+      border: 2px solid transparent;
+      height: 36px;
+      box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%), 0 1px 1.5px 0 rgb(0 0 0 / 5%);
+      :focus{
+          border: 2px solid #000;
+          border-radius: 4px;
+      }
+  
+  }
+  .btn{
+  
+  /* CSS */
+  
+    background-color: #c2fbd7;
+    border-radius: 10px;
+    width: 120px;
+    margin-top: 20px;
+    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+    color: green;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 20px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  
+  
+  &:hover {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+  }
+  }
+  
+  }
