@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState , useContext } from "react";
 import "./Signup.scss";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Auth } from "../../components/Firebase";
 import { useNavigate } from "react-router-dom";
+import UiContext from "../../UiContext";
 const Signup = () => {
+  const { setToast, openModal } = useContext(UiContext);
   const navigate = useNavigate()
   const [registerinfp, setRegisterInfo] = useState({
     email: "",
@@ -14,8 +16,21 @@ const Signup = () => {
   const handleCreateUser = () =>{
     const email = registerinfp.email
     const password = registerinfp.password
+    const confirm = registerinfp.confirmPassword
+
+    if(password !== confirm){ 
+      setToast({
+        message:'Password does not matched with confirm passwrod',
+        type:'error'
+      })
+    }else{
 
     createUserWithEmailAndPassword(Auth, email,password).then(()=>{
+      setToast({
+        message:'Registration Successfull',
+        type:'info'
+      })
+
       navigate('/todo')
 
     }).catch((err)=>{
@@ -23,6 +38,7 @@ const Signup = () => {
 
     })
   }
+}
   return (
     <div className="Signup-container">
       <div className="heading">
@@ -53,8 +69,8 @@ const Signup = () => {
           value={registerinfp.confirmPassword}
           onChange={(e)=>setRegisterInfo({...registerinfp,confirmPassword:e.target.value} )}
         />
-        <div>
-          <p onClick={()=>navigate('/')}>alredy have an account</p>
+        <div className="link" style={{marginTop:'10px' , marginLeft:'200px', cursor:'pointer'}}>
+          <p onClick={()=>navigate('/')}>Alredy have an account</p>
         </div>
       </div>
       <button className="btn" onClick={handleCreateUser}>sign in</button>

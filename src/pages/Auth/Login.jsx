@@ -1,11 +1,13 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect , useContext } from "react";
 import "./Login.scss";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword , onAuthStateChanged  } from "firebase/auth";
+import UiContext from "../../UiContext";
 
 import { db, Auth } from "../../components/Firebase";
 
 const Login = () => {
+  const { setToast } = useContext(UiContext);
   const navigate = useNavigate();
 
   useEffect(()=>{
@@ -28,6 +30,11 @@ const Login = () => {
   const handleLogin = () => {
     signInWithEmailAndPassword(Auth, email, password)
       .then((data) => {
+        setToast({
+          message:'Sign in succesfull',
+          type:'info'
+        })
+
         navigate('/todo');
       })
       .catch((error) => {
@@ -57,7 +64,7 @@ const Login = () => {
           onChange={handlePassword}
           value={password}
         />
-        <div>
+        <div  style={{marginTop:'10px' , marginLeft:'200px', cursor:'pointer'}}>
           <p onClick={() => navigate("/signup")}>Create new account</p>
         </div>
       </div>
